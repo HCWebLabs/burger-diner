@@ -1,0 +1,3127 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Scotty's Hamburgers - Website Redesign
+    Designed & Developed by HC Web Labs
+    
+    Typography:
+    - Headings: Bebas Neue (roadside sign aesthetic - tall, bold, impactful)
+    - Body: Archivo (clean, readable, modern)
+    - Perfect for a casual roadside burger pickup window
+    
+    Media & Resources:
+    - Images: Unsplash (https://unsplash.com) - Free high-quality food photography
+    - Videos: Mixkit (https://mixkit.co) - Free stock video clips
+    - Icons: Font Awesome 6 (https://fontawesome.com) - Free icon library
+    - Fonts: Google Fonts (https://fonts.google.com) - Bebas Neue & Archivo
+    
+    All media and resources used under their respective free licenses for commercial use.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scotty's Hamburgers - Order delicious gourmet burgers for pickup. Fresh ingredients, bold flavors, local favorite.">
+    <meta name="theme-color" content="#d62828">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scottyshamburgers.com/">
+    <meta property="og:title" content="Scotty's Hamburgers - Order Pickup">
+    <meta property="og:description" content="Fresh, handcrafted burgers made with premium ingredients. Order online for quick pickup.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://scottyshamburgers.com/">
+    <meta property="twitter:title" content="Scotty's Hamburgers - Order Pickup">
+    <meta property="twitter:description" content="Fresh, handcrafted burgers made with premium ingredients. Order online for quick pickup.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80">
+    
+    <title>Scotty's Hamburgers - Order Pickup</title>
+    <meta name="view-transition" content="same-origin">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload critical hero image for better LCP -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80&fm=webp" type="image/webp" imagesrcset="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80&fm=webp 400w, https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80&fm=webp 800w" imagesizes="(max-width: 768px) 100vw, 50vw">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Structured Data for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Scotty's Hamburgers",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+        "description": "Fresh, handcrafted burgers made with premium ingredients. Order online for quick pickup.",
+        "servesCuisine": "American, Burgers",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Your City",
+            "addressRegion": "Your State",
+            "addressCountry": "US"
+        },
+        "telephone": "+1-555-BURGER",
+        "url": "https://scottyshamburgers.com",
+        "menu": "https://scottyshamburgers.com#menu",
+        "acceptsReservations": "False",
+        "hasMenu": {
+            "@type": "Menu",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Burgers",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Classic Burger",
+                            "description": "Angus beef, lettuce, tomato, pickles, special sauce",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "12.99",
+                                "priceCurrency": "USD"
+                            }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Bacon Deluxe",
+                            "description": "Double beef, crispy bacon, cheddar, BBQ sauce",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "15.99",
+                                "priceCurrency": "USD"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <style>
+        /* ============================================
+           SCOTTY'S HAMBURGERS - MOBILE-FIRST RESPONSIVE DESIGN
+           Designed & Developed by HC Web Labs
+           
+           TYPOGRAPHY:
+           - Headings: Bebas Neue (tall, condensed, roadside sign aesthetic)
+           - Body: Archivo (clean, readable, modern sans-serif)
+           - Perfect for a casual roadside burger pickup window
+           
+           MOBILE-FIRST APPROACH:
+           - Base styles target mobile (320px+)
+           - Progressive enhancement via media queries
+           - Breakpoints: 390px, 500px, 768px, 1024px, 1280px, 1440px
+           - Container queries for component-level responsiveness
+           - Touch-friendly 44px minimum target sizes (48px on mobile)
+           - Full-width buttons on mobile, auto-width on larger screens
+           - Fluid typography with clamp() for smooth scaling
+           - Safe area insets for notched devices
+           
+           RESPONSIVE HEADER:
+           - Mobile: Logo (left) | Order Button (center) | Hamburger (right)
+           - Tablet+: Logo (left) | Main Nav (center) | Order Button (right)
+           - All elements scale with viewport (clamp() for typography)
+           - Grid-based layout for perfect alignment
+           - Smooth shadow transitions on scroll
+           
+           PERFORMANCE:
+           - View Transitions API with fallback
+           - Scroll-driven animations via @scroll-timeline
+           - Content-visibility for off-screen content
+           - Native lazy loading for images
+           
+           ACCESSIBILITY:
+           - WCAG 2.2 AA compliant
+           - Keyboard navigable
+           - Screen reader optimized
+           - Respects prefers-reduced-motion
+           - Visible focus indicators
+           ============================================ */
+        
+        /* ============================================
+           CSS CUSTOM PROPERTIES & DESIGN TOKENS
+           ============================================ */
+        :root {
+            /* Colors - OKLCH for perceptual uniformity */
+            --color-brand-primary: oklch(55% 0.22 25); /* Red */
+            --color-brand-dark: oklch(30% 0.15 25);
+            --color-neutral-100: oklch(98% 0 0);
+            --color-neutral-200: oklch(92% 0 0);
+            --color-neutral-300: oklch(85% 0 0);
+            --color-neutral-800: oklch(30% 0 0);
+            --color-neutral-900: oklch(20% 0 0);
+            --color-text-primary: oklch(20% 0 0);
+            --color-text-secondary: oklch(40% 0 0);
+            
+            /* Spacing scale */
+            --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+            --space-sm: clamp(0.75rem, 1.5vw, 1rem);
+            --space-md: clamp(1rem, 2vw, 1.5rem);
+            --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+            --space-xl: clamp(2rem, 4vw, 4rem);
+            --space-2xl: clamp(3rem, 6vw, 6rem);
+            
+            /* Typography */
+            --font-family-base: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            --font-family-heading: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+            --font-size-sm: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+            --font-size-base: clamp(1rem, 0.9rem + 0.3vw, 1.125rem);
+            --font-size-lg: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+            --font-size-xl: clamp(1.5rem, 1.2rem + 1vw, 2.5rem);
+            --font-size-2xl: clamp(2rem, 1.5rem + 2vw, 4rem);
+            
+            /* Layout */
+            --container-max: 1440px;
+            --content-max: 75ch;
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 1rem;
+            
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Safe area insets for notched devices */
+            --safe-area-top: env(safe-area-inset-top, 0);
+            --safe-area-bottom: env(safe-area-inset-bottom, 0);
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-neutral-100: oklch(15% 0 0);
+                --color-neutral-200: oklch(20% 0 0);
+                --color-neutral-300: oklch(30% 0 0);
+                --color-text-primary: oklch(95% 0 0);
+                --color-text-secondary: oklch(75% 0 0);
+            }
+        }
+        
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        body {
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background: var(--color-neutral-100);
+            min-height: 100vh;
+            min-height: 100svh;
+            overflow-x: hidden;
+        }
+        
+        /* View Transitions API support */
+        @supports (view-transition-name: none) {
+            ::view-transition-group(root) {
+                animation-duration: 0.3s;
+                animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            ::view-transition-old(root),
+            ::view-transition-new(root) {
+                animation-duration: 0.3s;
+            }
+        }
+        
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        .skip-link {
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            background: var(--color-brand-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 9999;
+            transform: translateY(-200%);
+            transition: transform var(--transition-fast);
+        }
+        
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+        
+        :focus-visible {
+            outline: 3px solid var(--color-brand-primary);
+            outline-offset: 3px;
+            border-radius: var(--border-radius-sm);
+        }
+        
+        /* Ensure focus visible for forced colors mode */
+        @media (forced-colors: active) {
+            :focus-visible {
+                outline: 3px solid CanvasText;
+            }
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        
+        h1 { font-size: var(--font-size-2xl); }
+        h2 { font-size: var(--font-size-xl); }
+        h3 { font-size: var(--font-size-lg); }
+        
+        p {
+            max-width: var(--content-max);
+        }
+        
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin-inline: auto;
+            padding-inline: clamp(1rem, 4vw, 2rem);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding-inline: var(--space-lg);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                padding-inline: var(--space-xl);
+            }
+        }
+        
+        /* ============================================
+           BUTTON COMPONENT
+           ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(0.375rem, 1vw, 0.5rem);
+            padding: clamp(0.625rem, 2vw, 0.875rem) clamp(1rem, 3vw, 1.5rem);
+            font-family: var(--font-family-heading);
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            min-height: 44px;
+            min-width: 44px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .btn i {
+            font-size: clamp(0.875rem, 1.75vw, 1rem);
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 500px) {
+            .btn {
+                width: auto;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .btn {
+                min-height: 48px;
+            }
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform var(--transition-slow);
+        }
+        
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .btn-primary {
+            background: var(--color-brand-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--color-brand-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(214, 40, 40, 0.3);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        /* Subtle attention animation for primary CTAs */
+        @media (prefers-reduced-motion: no-preference) {
+            .site-header .btn-primary {
+                animation: subtlePulse 3s ease-in-out infinite;
+            }
+            
+            @keyframes subtlePulse {
+                0%, 100% { box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.4); }
+                50% { box-shadow: 0 0 0 8px rgba(214, 40, 40, 0); }
+            }
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            background: white;
+            color: var(--color-brand-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--color-brand-primary);
+            border: 2px solid white;
+        }
+        
+        .btn-white:hover,
+        .btn-white:focus-visible {
+            background: transparent;
+            color: white;
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-white:active {
+            transform: translateY(0);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .btn::before {
+                display: none;
+            }
+            .btn:hover {
+                transform: none;
+            }
+        }
+        
+        /* ============================================
+           HEADER & NAVIGATION
+           Mobile-First Responsive Grid Layout:
+           
+           MOBILE (< 768px):
+           - Grid: Logo (left) | Order Button (center) | Hamburger (right)
+           - Main nav: HIDDEN
+           - Order button: VISIBLE (centered)
+           - Hamburger: VISIBLE
+           
+           DESKTOP (≥ 768px):
+           - Grid: Logo (left) | Main Nav (center) | Order Button (right)
+           - Main nav: VISIBLE (centered)
+           - Order button: VISIBLE (right-aligned)
+           - Hamburger: HIDDEN
+           
+           All typography and spacing scales with viewport using clamp()
+           ============================================ */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-neutral-200);
+            padding-block: clamp(0.75rem, 2vw, 1rem);
+            padding-block-start: calc(clamp(0.75rem, 2vw, 1rem) + var(--safe-area-top));
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: box-shadow var(--transition-base);
+        }
+        
+        .site-header.scrolled {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        @supports (backdrop-filter: blur(10px)) {
+            .site-header {
+                background: rgba(255, 255, 255, 0.8);
+            }
+        }
+        
+        .site-header .container {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            grid-template-areas: "logo order toggle";
+            align-items: center;
+            gap: clamp(0.5rem, 2vw, 1rem);
+        }
+        
+        /* Mobile-first: Logo | Order Button | Hamburger */
+        .site-logo {
+            grid-area: logo;
+            display: flex;
+            align-items: center;
+            gap: clamp(0.375rem, 1.5vw, 0.5rem);
+            text-decoration: none;
+            color: inherit;
+            transition: transform var(--transition-fast);
+        }
+        
+        .site-logo:hover {
+            transform: scale(1.02);
+        }
+        
+        .site-logo:hover .logo-icon {
+            background: var(--color-brand-dark);
+        }
+        
+        .header-order-btn {
+            grid-area: order;
+            justify-self: center;
+            width: auto !important; /* Override default button full-width on mobile */
+            position: relative;
+            display: inline-flex !important;
+        }
+        
+        /* Keep order button visible on all screen sizes */
+        @media (max-width: 767px) {
+            .header-order-btn {
+                display: inline-flex !important;
+                justify-self: center;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .header-order-btn {
+                display: inline-flex !important;
+                justify-self: end;
+            }
+        }
+        
+        /* Attention-grabbing pulse effect for order button */
+        @media (prefers-reduced-motion: no-preference) {
+            .header-order-btn::before {
+                content: '';
+                position: absolute;
+                inset: -3px;
+                border-radius: inherit;
+                background: var(--color-brand-primary);
+                opacity: 0.3;
+                animation: buttonPulse 2.5s ease-in-out infinite;
+                z-index: -1;
+            }
+            
+            @keyframes buttonPulse {
+                0%, 100% { 
+                    transform: scale(1);
+                    opacity: 0.3;
+                }
+                50% { 
+                    transform: scale(1.08);
+                    opacity: 0;
+                }
+            }
+        }
+        
+        .nav-toggle {
+            grid-area: toggle;
+            justify-self: end;
+            display: flex; /* Show by default for mobile */
+        }
+        
+        /* Show hamburger on mobile */
+        @media (max-width: 767px) {
+            .nav-toggle {
+                display: flex !important;
+            }
+        }
+        
+        /* Hide main nav on mobile */
+        .main-nav {
+            display: none;
+        }
+        
+        /* Explicitly hide on mobile */
+        @media (max-width: 767px) {
+            .main-nav {
+                display: none !important;
+            }
+        }
+        
+        /* Tablet and up: Logo | Main Nav | Order Button, hide hamburger */
+        @media (min-width: 768px) {
+            .site-header .container {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas: "logo nav order";
+                gap: var(--space-lg);
+            }
+            
+            /* Show main nav on desktop */
+            .main-nav {
+                grid-area: nav;
+                display: flex !important;
+                justify-content: center;
+                gap: clamp(1rem, 3vw, 2rem);
+            }
+            
+            /* Hide hamburger on desktop */
+            .nav-toggle {
+                display: none !important;
+            }
+        }
+        
+        /* Large desktop: better spacing */
+        @media (min-width: 1024px) {
+            .site-header .container {
+                gap: var(--space-xl);
+            }
+            
+            .main-nav {
+                gap: var(--space-xl);
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .main-nav {
+                gap: 2.5rem;
+            }
+        }
+        
+        /* Logo styling with viewport scaling */
+        .logo-icon {
+            width: clamp(36px, 8vw, 44px);
+            height: clamp(36px, 8vw, 44px);
+            background: var(--color-brand-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-sm);
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            flex-shrink: 0;
+            transition: background var(--transition-base);
+        }
+        
+        .logo-icon i {
+            display: block;
+        }
+        
+        .logo-text {
+            font-family: var(--font-family-heading);
+            font-size: clamp(1.125rem, 4vw, 1.5rem);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        
+        /* Hide logo text on very small screens */
+        @media (max-width: 390px) {
+            .logo-text {
+                display: none;
+            }
+        }
+        
+        /* Show logo text on larger screens */
+        @media (min-width: 500px) {
+            .logo-text {
+                display: inline;
+            }
+        }
+        
+        /* Header Order Button - scales with viewport */
+        .header-order-btn {
+            font-size: clamp(0.75rem, 2.5vw, 1rem);
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.25rem);
+            min-height: 44px;
+            white-space: nowrap;
+        }
+        
+        .header-order-btn i {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+        
+        /* Show/hide button text based on screen size */
+        .header-order-btn .btn-text {
+            display: none;
+        }
+        
+        @media (min-width: 390px) {
+            .header-order-btn .btn-text {
+                display: inline;
+            }
+        }
+        
+        /* Main Navigation - viewport scaled */
+        .main-nav a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: clamp(0.875rem, 1.8vw, 1rem);
+            transition: all var(--transition-fast);
+            padding: var(--space-xs) 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            white-space: nowrap;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        
+        /* Underline animation on hover */
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-brand-primary);
+            transition: width var(--transition-base);
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a:focus-visible::after {
+            width: 100%;
+        }
+        
+        .main-nav a i {
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            transition: transform var(--transition-fast);
+        }
+        
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            color: var(--color-brand-primary);
+        }
+        
+        .main-nav a:hover i,
+        .main-nav a:focus-visible i {
+            transform: scale(1.15) translateY(-1px);
+        }
+        
+        /* Hamburger Menu Toggle */
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: clamp(0.375rem, 1.5vw, 0.5rem);
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--color-text-primary);
+            transition: all var(--transition-base);
+        }
+        
+        .nav-toggle i {
+            font-size: clamp(1.25rem, 5vw, 1.5rem);
+            transition: transform var(--transition-base), color var(--transition-base);
+        }
+        
+        .nav-toggle[aria-expanded="true"] i {
+            transform: rotate(90deg);
+        }
+        
+        .nav-toggle:hover i {
+            transform: scale(1.1);
+            color: var(--color-brand-primary);
+        }
+        
+        .nav-toggle[aria-expanded="true"]:hover i {
+            transform: rotate(90deg) scale(1.1);
+        }
+        
+        /* Hide hamburger on desktop explicitly */
+        @media (min-width: 768px) {
+            .nav-toggle {
+                display: none !important;
+            }
+        }
+        
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .site-logo:hover {
+                transform: none;
+            }
+            
+            .main-nav a::after {
+                transition: none;
+            }
+            
+            .main-nav a:hover i,
+            .main-nav a:focus-visible i {
+                transform: none;
+            }
+            
+            .nav-toggle i {
+                transition: none;
+            }
+            
+            .nav-toggle[aria-expanded="true"] i {
+                transform: none;
+            }
+            
+            .nav-toggle:hover i,
+            .nav-toggle[aria-expanded="true"]:hover i {
+                transform: none;
+            }
+            
+            .site-header {
+                transition: none;
+            }
+        }
+        
+        /* ============================================
+           MOBILE MENU - MODERN SLIDE-IN DESIGN
+           ============================================ */
+        
+        /* Backdrop overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-base), visibility var(--transition-base);
+        }
+        
+        .mobile-menu-overlay[data-state="open"] {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Mobile menu panel */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(85vw, 400px);
+            background: white;
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.2);
+            padding-bottom: var(--safe-area-bottom);
+        }
+        
+        .mobile-menu[data-state="open"] {
+            transform: translateX(0);
+        }
+        
+        /* Menu header */
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-lg);
+            padding-top: calc(var(--space-lg) + var(--safe-area-top));
+            border-bottom: 2px solid var(--color-neutral-200);
+            background: var(--color-neutral-100);
+        }
+        
+        .mobile-menu-header h2 {
+            font-family: var(--font-family-heading);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--color-text-primary);
+        }
+        
+        .mobile-menu-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            color: var(--color-text-primary);
+            cursor: pointer;
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .mobile-menu-close i {
+            font-size: 1.5rem;
+        }
+        
+        .mobile-menu-close:hover,
+        .mobile-menu-close:focus-visible {
+            background: var(--color-neutral-200);
+            color: var(--color-brand-primary);
+            transform: rotate(90deg);
+        }
+        
+        /* Menu content */
+        .mobile-menu-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+        
+        /* Menu sections */
+        .mobile-menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+        
+        .mobile-menu-section-title {
+            font-family: var(--font-family-heading);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            margin: 0 0 var(--space-sm) 0;
+            padding: 0 var(--space-sm);
+        }
+        
+        /* Menu links */
+        .mobile-menu-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md) var(--space-sm);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            border-radius: var(--border-radius-md);
+            transition: all var(--transition-fast);
+            position: relative;
+            min-height: 56px;
+        }
+        
+        .mobile-menu-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: var(--color-brand-primary);
+            border-radius: 0 2px 2px 0;
+            transition: height var(--transition-base);
+        }
+        
+        .mobile-menu-link:hover::before,
+        .mobile-menu-link:focus-visible::before {
+            height: 70%;
+        }
+        
+        .mobile-menu-link i {
+            font-size: 1.5rem;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-brand-primary);
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+        }
+        
+        .mobile-menu-link:hover,
+        .mobile-menu-link:focus-visible {
+            background: var(--color-neutral-100);
+            padding-left: var(--space-md);
+        }
+        
+        .mobile-menu-link:hover i,
+        .mobile-menu-link:focus-visible i {
+            background: var(--color-brand-primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* CTA button in mobile menu */
+        .mobile-menu-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-lg);
+            background: var(--color-brand-primary);
+            color: white;
+            text-decoration: none;
+            font-family: var(--font-family-heading);
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border-radius: var(--border-radius-md);
+            transition: all var(--transition-base);
+            min-height: 56px;
+        }
+        
+        .mobile-menu-cta i {
+            font-size: 1.25rem;
+        }
+        
+        .mobile-menu-cta:hover,
+        .mobile-menu-cta:focus-visible {
+            background: var(--color-brand-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+        }
+        
+        /* Menu footer */
+        .mobile-menu-footer {
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--color-neutral-200);
+        }
+        
+        .mobile-menu-social {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+        }
+        
+        .mobile-menu-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--color-neutral-100);
+            border-radius: var(--border-radius-sm);
+            color: var(--color-text-primary);
+            transition: all var(--transition-base);
+        }
+        
+        .mobile-menu-social a i {
+            font-size: 1.25rem;
+        }
+        
+        .mobile-menu-social a:hover,
+        .mobile-menu-social a:focus-visible {
+            background: var(--color-brand-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Stagger animation for menu items */
+        @media (prefers-reduced-motion: no-preference) {
+            .mobile-menu[data-state="open"] .mobile-menu-link {
+                animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+            }
+            
+            .mobile-menu[data-state="open"] .mobile-menu-link:nth-child(2) {
+                animation-delay: 0.05s;
+            }
+            
+            .mobile-menu[data-state="open"] .mobile-menu-link:nth-child(3) {
+                animation-delay: 0.1s;
+            }
+            
+            .mobile-menu[data-state="open"] .mobile-menu-link:nth-child(4) {
+                animation-delay: 0.15s;
+            }
+            
+            .mobile-menu[data-state="open"] .mobile-menu-link:nth-child(5) {
+                animation-delay: 0.2s;
+            }
+            
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+        
+        /* Hide mobile menu on desktop */
+        @media (min-width: 768px) {
+            .mobile-menu,
+            .mobile-menu-overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .mobile-menu,
+            .mobile-menu-overlay {
+                transition: none;
+            }
+            
+            .mobile-menu-link,
+            .mobile-menu-close:hover,
+            .mobile-menu-link:hover i {
+                animation: none;
+                transform: none;
+            }
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: var(--color-neutral-200);
+            padding-block: var(--space-xl);
+            min-height: 70vh;
+            min-height: 70svh;
+            display: grid;
+            place-items: center;
+            position: relative;
+            overflow: hidden;
+            container-type: inline-size;
+            container-name: hero;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                padding-block: var(--space-2xl);
+            }
+        }
+        
+        /* Hero video background */
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        /* Hide video on mobile to save bandwidth */
+        @media (max-width: 767px) {
+            .hero-video {
+                display: none;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .hero-video {
+                display: none;
+            }
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(214, 40, 40, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(214, 40, 40, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            gap: var(--space-lg);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 390px) {
+            .hero-content {
+                gap: var(--space-xl);
+            }
+        }
+        
+        @container hero (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-2xl);
+            }
+        }
+        
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        @media (min-width: 500px) {
+            .hero-text {
+                gap: var(--space-lg);
+            }
+        }
+        
+        .hero-eyebrow {
+            font-family: var(--font-family-heading);
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            font-weight: 400;
+            color: var(--color-brand-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hero-title {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1;
+        }
+        
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+        }
+        
+        @media (min-width: 500px) {
+            .hero-cta {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-image {
+            position: relative;
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .hero-eyebrow,
+            .hero-title,
+            .hero-description,
+            .hero-cta,
+            .hero-image {
+                animation: none;
+            }
+        }
+        
+        /* ============================================
+           FEATURES SECTION
+           ============================================ */
+        .features {
+            padding-block: var(--space-xl);
+            container-type: inline-size;
+            container-name: features;
+        }
+        
+        @media (min-width: 768px) {
+            .features {
+                padding-block: var(--space-2xl);
+            }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .section-header {
+                margin-bottom: var(--space-xl);
+            }
+        }
+        
+        .section-title {
+            margin-bottom: var(--space-sm);
+            line-height: 1.1;
+            position: relative;
+            padding-bottom: var(--space-sm);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(60px, 15vw, 100px);
+            height: 4px;
+            background: var(--color-brand-primary);
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            margin-inline: auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            gap: var(--space-md);
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 500px) {
+            .features-grid {
+                gap: var(--space-lg);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @container features (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .feature-card {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-base);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .feature-card:hover .feature-icon i {
+            animation: iconBounce 0.6s ease;
+        }
+        
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .feature-card:hover .feature-icon {
+                transform: none;
+            }
+            .feature-card:hover .feature-icon i {
+                animation: none;
+            }
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-dark));
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: var(--space-md);
+            color: white;
+        }
+        
+        .feature-icon i {
+            display: block;
+        }
+        
+        .feature-title {
+            margin-bottom: var(--space-sm);
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+        }
+        
+        .feature-description {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Scroll-driven animation for features */
+        @supports (animation-timeline: view()) {
+            @media (prefers-reduced-motion: no-preference) {
+                .feature-card {
+                    animation: fadeInUpScroll linear both;
+                    animation-timeline: view();
+                    animation-range: entry 0% cover 30%;
+                }
+                
+                @keyframes fadeInUpScroll {
+                    from {
+                        opacity: 0;
+                        transform: translateY(50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+        
+        /* ============================================
+           MENU PREVIEW SECTION
+           ============================================ */
+        .menu-preview {
+            padding-block: var(--space-xl);
+            background: var(--color-neutral-200);
+            container-type: inline-size;
+            container-name: menu;
+        }
+        
+        @media (min-width: 768px) {
+            .menu-preview {
+                padding-block: var(--space-2xl);
+            }
+        }
+        
+        .menu-grid {
+            display: grid;
+            gap: var(--space-md);
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 500px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-lg);
+            }
+        }
+        
+        @container menu (min-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @container menu (min-width: 1024px) {
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @container menu (min-width: 1280px) {
+            .menu-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .menu-item {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-base);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: var(--space-md);
+        }
+        
+        .menu-item-title {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .menu-item-description {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-sm);
+            line-height: 1.5;
+        }
+        
+        .menu-item-price {
+            font-family: var(--font-family-heading);
+            font-weight: 400;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--color-brand-primary);
+            letter-spacing: 0.05em;
+        }
+        
+        /* Scroll-driven animation for menu items */
+        @supports (animation-timeline: view()) {
+            @media (prefers-reduced-motion: no-preference) {
+                .menu-item {
+                    animation: scaleInScroll linear both;
+                    animation-timeline: view();
+                    animation-range: entry 0% cover 30%;
+                }
+                
+                @keyframes scaleInScroll {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.9);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+        
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .video-showcase {
+            padding-block: var(--space-xl);
+            background: white;
+            container-type: inline-size;
+            container-name: video-showcase;
+        }
+        
+        @media (min-width: 768px) {
+            .video-showcase {
+                padding-block: var(--space-2xl);
+            }
+        }
+        
+        .video-showcase-content {
+            display: grid;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .video-showcase-content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-2xl);
+            }
+        }
+        
+        .video-showcase-text {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        
+        .video-showcase-text .section-title {
+            text-align: left;
+        }
+        
+        .video-showcase-text .section-title::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .video-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+        }
+        
+        .video-features li {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .video-features li i {
+            color: var(--color-brand-primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: var(--color-neutral-900);
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Video controls styling */
+        .video-container video::-webkit-media-controls-panel {
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+        }
+        
+        /* Scroll animation for video showcase */
+        @supports (animation-timeline: view()) {
+            @media (prefers-reduced-motion: no-preference) {
+                .video-showcase-content > * {
+                    animation: slideInScroll linear both;
+                    animation-timeline: view();
+                    animation-range: entry 0% cover 30%;
+                }
+                
+                .video-showcase-text {
+                    animation-name: slideInLeftScroll;
+                }
+                
+                .video-container {
+                    animation-name: slideInRightScroll;
+                }
+                
+                @keyframes slideInLeftScroll {
+                    from {
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                
+                @keyframes slideInRightScroll {
+                    from {
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+        
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            padding-block: var(--space-xl);
+            background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-dark));
+            color: white;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .cta-section {
+                padding-block: var(--space-2xl);
+            }
+        }
+        
+        .cta-content {
+            max-width: 100%;
+            margin-inline: auto;
+            padding-inline: var(--space-sm);
+        }
+        
+        @media (min-width: 500px) {
+            .cta-content {
+                max-width: 800px;
+                padding-inline: 0;
+            }
+        }
+        
+        .cta-title {
+            margin-bottom: var(--space-md);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            line-height: 1;
+        }
+        
+        .cta-description {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-lg);
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            justify-content: center;
+        }
+        
+        @media (min-width: 500px) {
+            .cta-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--color-brand-primary);
+        }
+        
+        .btn-white:hover,
+        .btn-white:focus-visible {
+            background: var(--color-neutral-200);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* ============================================
+           FOOTER
+           
+           GRID LAYOUT:
+           - Mobile: Single column stack
+           - Tablet (≥500px): 2x2 centered grid
+           - Desktop (≥1024px): 2fr 1fr 1fr 1fr
+             (About gets 2x space, others equal)
+           
+           Clean, balanced layout with visual hierarchy
+           ============================================ */
+        .site-footer {
+            background: linear-gradient(to bottom, var(--color-neutral-800), var(--color-neutral-900));
+            color: var(--color-neutral-200);
+            padding-block: var(--space-lg);
+            padding-block-end: calc(var(--space-lg) + var(--safe-area-bottom));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative top border */
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                var(--color-brand-primary) 0%, 
+                var(--color-brand-dark) 50%, 
+                var(--color-brand-primary) 100%);
+        }
+        
+        /* Subtle pattern overlay */
+        .site-footer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, 
+                    transparent, 
+                    transparent 10px, 
+                    rgba(255, 255, 255, 0.01) 10px, 
+                    rgba(255, 255, 255, 0.01) 20px);
+            pointer-events: none;
+        }
+        
+        .site-footer .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .site-footer {
+                padding-block: var(--space-xl);
+                padding-block-end: calc(var(--space-xl) + var(--safe-area-bottom));
+            }
+        }
+        
+        .footer-content {
+            display: grid;
+            gap: var(--space-lg);
+            grid-template-columns: 1fr;
+            margin-bottom: var(--space-md);
+        }
+        
+        /* Tablet: 2x2 centered grid */
+        @media (min-width: 500px) and (max-width: 1023px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xl);
+                max-width: 700px;
+                margin-inline: auto;
+                margin-bottom: var(--space-md);
+            }
+        }
+        
+        /* Desktop: About gets 2fr, others get 1fr each */
+        @media (min-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: clamp(2rem, 5vw, 4rem);
+                margin-bottom: var(--space-lg);
+            }
+        }
+        
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        
+        /* Social icons in About section */
+        .footer-social {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-xs);
+            flex-wrap: wrap;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 8vw, 44px);
+            height: clamp(40px, 8vw, 44px);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-sm);
+            color: white;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0;
+            gap: 0;
+        }
+        
+        .footer-social a::before {
+            display: none;
+        }
+        
+        .footer-social a i {
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            color: white;
+            transition: transform var(--transition-fast);
+            width: auto;
+        }
+        
+        .footer-social a:hover,
+        .footer-social a:focus-visible {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-brand-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            color: white;
+        }
+        
+        .footer-social a:hover i,
+        .footer-social a:focus-visible i {
+            transform: scale(1.1);
+        }
+        
+        /* Individual social media brand colors on hover */
+        .footer-social a[href*="facebook"]:hover {
+            background: #1877f2;
+            border-color: #1877f2;
+        }
+        
+        .footer-social a[href*="instagram"]:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: #e6683c;
+        }
+        
+        .footer-social a[href*="twitter"]:hover,
+        .footer-social a[href*="x.com"]:hover {
+            background: black;
+            border-color: white;
+        }
+        
+        .footer-social a[href*="newsletter"]:hover,
+        .footer-social a[href="#newsletter"]:hover {
+            background: var(--color-brand-primary);
+            border-color: var(--color-brand-primary);
+        }
+        
+        .footer-section p {
+            color: var(--color-neutral-200);
+            line-height: 1.6;
+            font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+            margin: 0;
+        }
+        
+        .footer-section h3 {
+            font-family: var(--font-family-heading);
+            color: white;
+            margin-bottom: var(--space-sm);
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: clamp(0.375rem, 1vw, 0.5rem);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .footer-section h3 i {
+            color: var(--color-brand-primary);
+            font-size: 0.9em;
+        }
+        
+        /* Underline accent for footer headings */
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--color-brand-primary);
+            border-radius: 2px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1vw, 0.625rem);
+        }
+        
+        .footer-section a {
+            color: var(--color-neutral-200);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: clamp(0.25rem, 0.5vw, 0.375rem) 0;
+            font-size: clamp(0.875rem, 1.5vw, 0.95rem);
+            position: relative;
+        }
+        
+        .footer-section a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-brand-primary);
+            transition: width var(--transition-base);
+        }
+        
+        .footer-section a:hover::before,
+        .footer-section a:focus-visible::before {
+            width: 100%;
+        }
+        
+        .footer-section a i {
+            font-size: 1rem;
+            width: 1.125rem;
+            text-align: center;
+            color: var(--color-brand-primary);
+            transition: transform var(--transition-fast);
+            flex-shrink: 0;
+        }
+        
+        .footer-section a:hover,
+        .footer-section a:focus-visible {
+            color: white;
+            transform: translateX(3px);
+        }
+        
+        .footer-section a:hover i,
+        .footer-section a:focus-visible i {
+            transform: scale(1.15);
+        }
+        
+        /* Special styling for social media icons */
+        .footer-section a[href*="facebook"]:hover i {
+            color: #1877f2;
+        }
+        
+        .footer-section a[href*="instagram"]:hover i {
+            color: #e4405f;
+        }
+        
+        .footer-section a[href*="twitter"]:hover i,
+        .footer-section a[href*="x.com"]:hover i {
+            color: white;
+        }
+        
+        .footer-bottom {
+            margin-top: var(--space-sm);
+            padding-top: clamp(0.5rem, 1vw, 0.625rem);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            color: var(--color-neutral-300);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(0.125rem, 0.5vw, 0.25rem);
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            max-width: 100%;
+            font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+            line-height: 1.3;
+        }
+        
+        .footer-bottom p:first-child {
+            font-weight: 600;
+            color: white;
+            font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: clamp(0.125rem, 0.5vw, 0.25rem);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer-links a {
+            color: var(--color-neutral-200);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            white-space: nowrap;
+            font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+        }
+        
+        .footer-links a:hover,
+        .footer-links a:focus-visible {
+            color: var(--color-brand-primary);
+        }
+        
+        .footer-bottom small {
+            opacity: 0.75;
+            font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+            line-height: 1.2;
+        }
+        
+        .footer-bottom small a {
+            color: var(--color-neutral-200);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .footer-bottom small a:hover,
+        .footer-bottom small a:focus-visible {
+            color: var(--color-brand-primary);
+            border-bottom-color: var(--color-brand-primary);
+        }
+        
+        /* Mobile-first: Hide separators on very small screens */
+        @media (max-width: 500px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 0.125rem;
+            }
+            
+            .footer-links span[aria-hidden] {
+                display: none;
+            }
+        }
+        
+        /* Improved spacing on tablet */
+        @media (min-width: 768px) {
+            .footer-bottom {
+                margin-top: var(--space-md);
+                padding-top: var(--space-sm);
+                gap: clamp(0.25rem, 1vw, 0.375rem);
+            }
+        }
+        
+        /* Respect reduced motion for footer animations */
+        @media (prefers-reduced-motion: reduce) {
+            .footer-section a::before {
+                transition: none;
+            }
+            
+            .footer-section a:hover,
+            .footer-section a:focus-visible {
+                transform: none;
+            }
+            
+            .footer-section a:hover i,
+            .footer-section a:focus-visible i {
+                transform: none;
+            }
+            
+            .footer-social a:hover,
+            .footer-social a:focus-visible {
+                transform: none;
+            }
+            
+            .footer-social a:hover i,
+            .footer-social a:focus-visible i {
+                transform: none;
+            }
+        }
+        
+        /* ============================================
+           PERFORMANCE OPTIMIZATIONS
+           ============================================ */
+        .lazy-section {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 500px;
+        }
+        
+        /* ============================================
+           PRINT STYLES
+           ============================================ */
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            bottom: calc(var(--space-lg) + var(--safe-area-bottom));
+            width: 50px;
+            height: 50px;
+            background: var(--color-brand-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(214, 40, 40, 0.3);
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all var(--transition-base);
+            z-index: 999;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-to-top:hover,
+        .scroll-to-top:focus-visible {
+            background: var(--color-brand-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(214, 40, 40, 0.4);
+        }
+        
+        .scroll-to-top i {
+            font-size: 1.25rem;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-to-top {
+                transition: opacity var(--transition-base);
+            }
+            .scroll-to-top:hover {
+                transform: none;
+            }
+        }
+        
+        /* ============================================
+           PRINT STYLES
+           ============================================ */
+        @media print {
+            .site-header,
+            .nav-toggle,
+            .mobile-menu,
+            .site-footer,
+            .btn,
+            .scroll-to-top {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+        
+        /* ============================================
+           ADDITIONAL MOBILE-FIRST OPTIMIZATIONS
+           ============================================ */
+        /* Ensure text never gets too small on tiny screens */
+        @media (max-width: 390px) {
+            :root {
+                --font-size-sm: 0.875rem;
+                --font-size-base: 1rem;
+                --font-size-lg: 1.125rem;
+                --font-size-xl: 1.5rem;
+                --font-size-2xl: 2rem;
+            }
+            
+            .hero-eyebrow {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+        
+        /* Improve touch targets on small screens */
+        @media (max-width: 768px) {
+            .btn {
+                padding: calc(var(--space-sm) + 2px) var(--space-lg);
+                min-height: 48px;
+            }
+            
+            .main-nav a,
+            .mobile-menu a {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+            }
+        }
+        
+        /* Ensure images don't overflow on tiny screens */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <a href="/" class="site-logo" aria-label="Scotty's Hamburgers Home">
+                <div class="logo-icon" aria-hidden="true">
+                    <i class="fa-solid fa-burger"></i>
+                </div>
+                <span class="logo-text">Scotty's Hamburgers</span>
+            </a>
+            
+            <a href="#order" class="btn btn-primary header-order-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="btn-text">Order Now</span>
+            </a>
+            
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#menu">
+                    <i class="fa-solid fa-utensils"></i> Menu
+                </a>
+                <a href="#about">
+                    <i class="fa-solid fa-circle-info"></i> About
+                </a>
+                <a href="#locations">
+                    <i class="fa-solid fa-location-dot"></i> Locations
+                </a>
+                <a href="#contact">
+                    <i class="fa-solid fa-envelope"></i> Contact
+                </a>
+            </nav>
+            
+            <button 
+                class="nav-toggle" 
+                aria-expanded="false" 
+                aria-controls="mobile-menu"
+                aria-label="Toggle navigation menu"
+                id="nav-toggle"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" data-state="closed" aria-hidden="true"></div>
+    
+    <!-- Mobile Menu -->
+    <aside class="mobile-menu" id="mobile-menu" data-state="closed" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+        <div class="mobile-menu-header">
+            <h2 id="mobile-menu-title">Menu</h2>
+            <button 
+                class="mobile-menu-close" 
+                aria-label="Close navigation menu"
+                id="mobile-menu-close"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <nav class="mobile-menu-content" aria-label="Mobile navigation">
+            <div class="mobile-menu-section">
+                <h3 class="mobile-menu-section-title">Navigation</h3>
+                <a href="#menu" class="mobile-menu-link">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="#about" class="mobile-menu-link">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About</span>
+                </a>
+                <a href="#locations" class="mobile-menu-link">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Locations</span>
+                </a>
+                <a href="#contact" class="mobile-menu-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-section">
+                <h3 class="mobile-menu-section-title">Quick Actions</h3>
+                <a href="#order" class="mobile-menu-cta">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Order Now</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-menu-social">
+                    <a href="#" rel="noopener" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" rel="noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" rel="noopener" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <!-- Background video (hidden on mobile and reduced motion) -->
+            <video 
+                class="hero-video" 
+                autoplay 
+                loop 
+                muted 
+                playsinline
+                preload="none"
+                aria-hidden="true"
+                poster="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=1920&q=60"
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-fresh-burger-on-a-restaurant-table-4254-large.mp4" type="video/mp4">
+                <!-- Fallback for older browsers -->
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-eyebrow">Scotty's</p>
+                        <h1 id="hero-title" class="hero-title">Order Pickup</h1>
+                        <p class="hero-description">
+                            Fresh, handcrafted burgers made with premium ingredients. 
+                            Order online and pick up your favorites in minutes.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#order" class="btn btn-primary">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                Order Pickup
+                            </a>
+                            <a href="#menu" class="btn btn-secondary">
+                                <i class="fa-solid fa-utensils"></i>
+                                View Menu
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <picture>
+                            <source 
+                                type="image/webp"
+                                srcset="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80&fm=webp 400w,
+                                        https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80&fm=webp 800w,
+                                        https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80&fm=webp 1200w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                            <source 
+                                type="image/jpeg"
+                                srcset="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80 400w,
+                                        https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80 800w,
+                                        https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80 1200w"
+                                sizes="(max-width: 768px) 100vw, 50vw">
+                            <img 
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                                alt="Gourmet burger with fresh lettuce, juicy patty, and sesame seed bun"
+                                width="800"
+                                height="600"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="async"
+                            />
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features lazy-section" aria-labelledby="features-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="features-title" class="section-title">Why Choose Scotty's?</h2>
+                    <p class="section-description">
+                        Quality ingredients, bold flavors, and fast service that keeps our community coming back.
+                    </p>
+                </div>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                        <h3 class="feature-title">Fresh Ingredients</h3>
+                        <p class="feature-description">
+                            Locally sourced produce and premium beef delivered daily to ensure maximum freshness.
+                        </p>
+                    </article>
+                    
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Fast Pickup</h3>
+                        <p class="feature-description">
+                            Order ahead online and your food will be ready when you arrive. No waiting required.
+                        </p>
+                    </article>
+                    
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="feature-title">Custom Options</h3>
+                        <p class="feature-description">
+                            Build your perfect burger with unlimited toppings and modifications at no extra charge.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Menu Preview Section -->
+        <section class="menu-preview lazy-section" id="menu" aria-labelledby="menu-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="menu-title" class="section-title">Popular Items</h2>
+                    <p class="section-description">
+                        Customer favorites that keep people coming back for more.
+                    </p>
+                </div>
+                
+                <div class="menu-grid">
+                    <article class="menu-item">
+                        <img 
+                            src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80"
+                            srcset="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80 300w,
+                                    https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=400&q=80 400w,
+                                    https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80 600w"
+                            sizes="(max-width: 500px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            alt="Classic Burger with lettuce, tomato, and special sauce"
+                            class="menu-item-image"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Classic Burger</h3>
+                            <p class="menu-item-description">
+                                Angus beef, lettuce, tomato, pickles, special sauce
+                            </p>
+                            <span class="menu-item-price">$12.99</span>
+                        </div>
+                    </article>
+                    
+                    <article class="menu-item">
+                        <img 
+                            src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80"
+                            srcset="https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=300&q=80 300w,
+                                    https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=400&q=80 400w,
+                                    https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=600&q=80 600w"
+                            sizes="(max-width: 500px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            alt="Bacon Deluxe Burger with double beef and crispy bacon"
+                            class="menu-item-image"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Bacon Deluxe</h3>
+                            <p class="menu-item-description">
+                                Double beef, crispy bacon, cheddar, BBQ sauce
+                            </p>
+                            <span class="menu-item-price">$15.99</span>
+                        </div>
+                    </article>
+                    
+                    <article class="menu-item">
+                        <img 
+                            src="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=400&q=80"
+                            srcset="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=300&q=80 300w,
+                                    https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=400&q=80 400w,
+                                    https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=600&q=80 600w"
+                            sizes="(max-width: 500px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            alt="Veggie Burger with avocado and fresh sprouts"
+                            class="menu-item-image"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Veggie Burger</h3>
+                            <p class="menu-item-description">
+                                Plant-based patty, avocado, sprouts, chipotle mayo
+                            </p>
+                            <span class="menu-item-price">$11.99</span>
+                        </div>
+                    </article>
+                    
+                    <article class="menu-item">
+                        <img 
+                            src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=400&q=80"
+                            srcset="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=300&q=80 300w,
+                                    https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=400&q=80 400w,
+                                    https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=600&q=80 600w"
+                            sizes="(max-width: 500px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            alt="Spicy Jalapeño Burger with pepper jack cheese"
+                            class="menu-item-image"
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-title">Spicy Jalapeño</h3>
+                            <p class="menu-item-description">
+                                Pepper jack cheese, jalapeños, spicy aioli
+                            </p>
+                            <span class="menu-item-price">$13.99</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Video Showcase Section -->
+        <section class="video-showcase lazy-section" id="about" aria-labelledby="video-title">
+            <div class="container">
+                <div class="video-showcase-content">
+                    <div class="video-showcase-text">
+                        <h2 id="video-title" class="section-title">Experience Scotty's</h2>
+                        <p class="section-description">
+                            Watch how we craft each burger with passion, using only the freshest ingredients and time-tested recipes that have made us a local favorite.
+                        </p>
+                        <ul class="video-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Fresh ground beef daily</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Locally sourced produce</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Handcrafted sauces</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Made to order</li>
+                        </ul>
+                    </div>
+                    <div class="video-container">
+                        <video 
+                            controls 
+                            preload="metadata"
+                            poster="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80"
+                            aria-label="Video showing burger preparation at Scotty's Hamburgers"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-person-preparing-gourmet-hamburger-42347-large.mp4" type="video/mp4">
+                            <track kind="captions" src="" srclang="en" label="English">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section lazy-section" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-title" class="cta-title">Ready to Order?</h2>
+                    <p class="cta-description">
+                        Skip the line and order pickup online. Your favorite burgers are just a few clicks away.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#order" class="btn btn-white">
+                            <i class="fa-solid fa-rocket"></i>
+                            Start Your Order
+                        </a>
+                        <a href="#locations" class="btn btn-secondary">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Find a Location
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-burger"></i> About Scotty's</h3>
+                    <p>
+                        Serving the community since 2015 with fresh, handcrafted burgers made with love and quality ingredients. Your local roadside burger stop!
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" rel="noopener" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" rel="noopener" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" rel="noopener" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#newsletter" aria-label="Newsletter">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-link"></i> Quick Links</h3>
+                    <ul>
+                        <li><a href="#menu"><i class="fa-solid fa-utensils"></i> Menu</a></li>
+                        <li><a href="#about"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                        <li><a href="#locations"><i class="fa-solid fa-location-dot"></i> Locations</a></li>
+                        <li><a href="#careers"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-headset"></i> Customer Service</h3>
+                    <ul>
+                        <li><a href="#contact"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+                        <li><a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                        <li><a href="#nutrition"><i class="fa-solid fa-heart-pulse"></i> Nutrition Info</a></li>
+                        <li><a href="#allergens"><i class="fa-solid fa-triangle-exclamation"></i> Allergen Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3><i class="fa-solid fa-share-nodes"></i> Connect</h3>
+                    <ul>
+                        <li>
+                            <a href="#" rel="noopener">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" rel="noopener">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" rel="noopener">
+                                <i class="fa-brands fa-x-twitter"></i> Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#newsletter">
+                                <i class="fa-solid fa-envelope"></i> Newsletter
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Scotty's Hamburgers. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <span aria-hidden="true"> | </span>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <p><small>Designed & Developed by HC Web Labs | Photos by <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> | Videos by <a href="https://mixkit.co" target="_blank" rel="noopener">Mixkit</a> | Icons by <a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome</a></small></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button 
+        id="scroll-to-top" 
+        class="scroll-to-top" 
+        aria-label="Scroll to top"
+        title="Back to top"
+    >
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    
+    <!-- JavaScript Module -->
+    <script type="module">
+        // ============================================
+        // MODERN MOBILE NAVIGATION - ES6+
+        // ============================================
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const siteHeader = document.querySelector('.site-header');
+        
+        // Header scroll shadow effect
+        const handleHeaderScroll = () => {
+            if (window.scrollY > 10) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        };
+        
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+        
+        if (navToggle && mobileMenu && mobileMenuOverlay) {
+            // Store original body overflow
+            let originalBodyOverflow = '';
+            
+            // Open mobile menu
+            const openMobileMenu = () => {
+                navToggle.setAttribute('aria-expanded', 'true');
+                mobileMenu.dataset.state = 'open';
+                mobileMenuOverlay.dataset.state = 'open';
+                mobileMenuOverlay.setAttribute('aria-hidden', 'false');
+                
+                // Prevent body scroll
+                originalBodyOverflow = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+                
+                // Toggle hamburger icon
+                const icon = navToggle.querySelector('i');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                
+                // Focus first menu item
+                setTimeout(() => {
+                    const firstLink = mobileMenu.querySelector('.mobile-menu-link');
+                    if (firstLink) firstLink.focus();
+                }, 300);
+            };
+            
+            // Close mobile menu
+            const closeMobileMenu = () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.dataset.state = 'closed';
+                mobileMenuOverlay.dataset.state = 'closed';
+                mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+                
+                // Restore body scroll
+                document.body.style.overflow = originalBodyOverflow;
+                
+                // Toggle hamburger icon
+                const icon = navToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            };
+            
+            // Toggle mobile menu
+            navToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.dataset.state === 'open';
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+            
+            // Close button
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', () => {
+                    closeMobileMenu();
+                    navToggle.focus();
+                });
+            }
+            
+            // Close when clicking overlay
+            mobileMenuOverlay.addEventListener('click', () => {
+                closeMobileMenu();
+                navToggle.focus();
+            });
+            
+            // Close when clicking menu links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.dataset.state === 'open') {
+                    closeMobileMenu();
+                    navToggle.focus();
+                }
+            });
+            
+            // Swipe to close gesture support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            mobileMenu.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            mobileMenu.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+            
+            const handleSwipe = () => {
+                const swipeThreshold = 100;
+                const swipeDistance = touchEndX - touchStartX;
+                
+                // Swipe right to close (menu slides in from right)
+                if (swipeDistance > swipeThreshold) {
+                    closeMobileMenu();
+                }
+            };
+            
+            // Trap focus within mobile menu when open
+            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== 'Tab' || mobileMenu.dataset.state !== 'open') return;
+                
+                const focusables = Array.from(mobileMenu.querySelectorAll(focusableElements));
+                const firstFocusable = focusables[0];
+                const lastFocusable = focusables[focusables.length - 1];
+                
+                if (e.shiftKey) {
+                    // Shift + Tab
+                    if (document.activeElement === firstFocusable) {
+                        e.preventDefault();
+                        lastFocusable.focus();
+                    }
+                } else {
+                    // Tab
+                    if (document.activeElement === lastFocusable) {
+                        e.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            });
+        }
+        
+        // ============================================
+        // VIEW TRANSITIONS API
+        // ============================================
+        if (document.startViewTransition) {
+            // Intercept navigation for smooth transitions
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+                
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    document.startViewTransition(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+            });
+        }
+        
+        // ============================================
+        // INTERSECTION OBSERVER FOR LAZY LOADING
+        // ============================================
+        if ('IntersectionObserver' in window) {
+            // Image lazy loading observer
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px'
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+            
+            // Video lazy loading observer
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        // Load video when it comes into view
+                        if (video.dataset.src) {
+                            const source = video.querySelector('source');
+                            if (source && source.dataset.src) {
+                                source.src = source.dataset.src;
+                                video.load();
+                            }
+                        }
+                        // Play background video when visible
+                        if (video.classList.contains('hero-video') && video.paused) {
+                            video.play().catch(() => {
+                                // Autoplay failed, which is fine
+                            });
+                        }
+                    } else {
+                        // Pause background video when not visible to save resources
+                        if (video.classList.contains('hero-video') && !video.paused) {
+                            video.pause();
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '100px'
+            });
+            
+            document.querySelectorAll('video').forEach(video => {
+                videoObserver.observe(video);
+            });
+        }
+        
+        // ============================================
+        // PERFORMANCE MONITORING
+        // ============================================
+        if ('PerformanceObserver' in window) {
+            // Monitor Largest Contentful Paint (LCP)
+            try {
+                const lcpObserver = new PerformanceObserver((list) => {
+                    const entries = list.getEntries();
+                    const lastEntry = entries[entries.length - 1];
+                    console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
+                });
+                lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+            } catch (e) {
+                // Observer not supported
+            }
+            
+            // Monitor Cumulative Layout Shift (CLS)
+            try {
+                let clsScore = 0;
+                const clsObserver = new PerformanceObserver((list) => {
+                    for (const entry of list.getEntries()) {
+                        if (!entry.hadRecentInput) {
+                            clsScore += entry.value;
+                        }
+                    }
+                    console.log('CLS:', clsScore);
+                });
+                clsObserver.observe({ type: 'layout-shift', buffered: true });
+            } catch (e) {
+                // Observer not supported
+            }
+        }
+        
+        // ============================================
+        // SMOOTH SCROLL POLYFILL FOR OLDER BROWSERS
+        // ============================================
+        if (!('scrollBehavior' in document.documentElement.style)) {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').slice(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const targetPosition = targetElement.offsetTop;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // ============================================
+        // REDUCED MOTION DETECTION
+        // ============================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        if (prefersReducedMotion.matches) {
+            document.documentElement.style.scrollBehavior = 'auto';
+        }
+        
+        // Listen for changes
+        prefersReducedMotion.addEventListener('change', () => {
+            if (prefersReducedMotion.matches) {
+                document.documentElement.style.scrollBehavior = 'auto';
+            } else {
+                document.documentElement.style.scrollBehavior = 'smooth';
+            }
+        });
+        
+        // ============================================
+        // SCROLL TO TOP BUTTON
+        // ============================================
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+        
+        if (scrollToTopButton) {
+            // Show/hide button based on scroll position
+            const toggleScrollButton = () => {
+                if (window.scrollY > 300) {
+                    scrollToTopButton.classList.add('visible');
+                } else {
+                    scrollToTopButton.classList.remove('visible');
+                }
+            };
+            
+            // Check on scroll
+            window.addEventListener('scroll', toggleScrollButton, { passive: true });
+            
+            // Check on load
+            toggleScrollButton();
+            
+            // Scroll to top when clicked
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // ============================================
+        // SERVICE WORKER REGISTRATION (OPTIONAL)
+        // ============================================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Uncomment to enable service worker
+                // navigator.serviceWorker.register('/sw.js')
+                //     .then(reg => console.log('Service Worker registered'))
+                //     .catch(err => console.log('Service Worker registration failed'));
+            });
+        }
+        
+        console.log('HC Web Labs - Scotty\'s Hamburgers Website Loaded');
+    </script>
+</body>
+</html>
